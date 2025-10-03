@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Anniversary QR</title>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #fce4ec;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      color: #ad1457;
+    }
+    #qrcode {
+      margin-top: 20px;
+      padding: 15px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <h1>💖 Scan this QR, Love 💖</h1>
+  <div id="qrcode"></div>
+
+  <script>
+    // Full URL for your anniversary.html page
+    // Example: if you upload this to GitHub Pages or Netlify
+    // replace the below with your actual URL
+    const messagePage = window.location.origin + "/anniversary.html";
+
+    QRCode.toCanvas(document.getElementById("qrcode"), messagePage, { 
+      width: 250, 
+      margin: 2,
+      color: {
+        dark: "#ad1457",
+        light: "#ffffff"
+      }
+    });
+  </script>
+</body>
+</html>
