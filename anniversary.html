@@ -2,48 +2,65 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Anniversary QR</title>
-  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  <title>Happy Anniversary</title>
   <style>
     body {
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background: #fce4ec;
-      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: "Georgia", serif;
+      text-align: center;
+      color: #4a148c;
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      max-width: 550px;
     }
     h1 {
-      color: #ad1457;
+      font-size: 2em;
+      margin-bottom: 20px;
     }
-    #qrcode {
-      margin-top: 20px;
-      padding: 15px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    p {
+      font-size: 1.2em;
+      line-height: 1.6em;
+      margin-bottom: 15px;
+      opacity: 0; /* start hidden */
+      transform: translateY(15px);
+      animation: fadeInUp 1s forwards;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
 <body>
-  <h1>💖 Scan this QR, Love 💖</h1>
-  <div id="qrcode"></div>
+  <div class="card">
+    <h1>💝 Happy Anniversary, My Love 💝</h1>
 
-  <script>
-    // Full URL for your anniversary.html page
-    // Example: if you upload this to GitHub Pages or Netlify
-    // replace the below with your actual URL
-    const messagePage = window.location.origin + "/anniversary.html";
-
-    QRCode.toCanvas(document.getElementById("qrcode"), messagePage, { 
-      width: 250, 
-      margin: 2,
-      color: {
-        dark: "#ad1457",
-        light: "#ffffff"
-      }
-    });
-  </script>
+    <p style="animation-delay: 0.5s">Happy anniversary, my love! 💕 Can you believe that tomorrow marks one year of us officially being together? It still feels unreal sometimes. From the day we first met back in Grade 11 up to now, we’ve already been through so much. We’ve had our ups and downs, our laughs and our tears — but despite everything, we’re still here, still choosing each other every single day.</p>
+    
+    <p style="animation-delay: 3s">Looking back, I’m proud of how far we’ve come. We’ve weathered storms that could’ve easily broken us, but instead, they made us stronger. And love, if there’s one thing I’ve learned this past year, it’s that you’re the person I want to keep fighting for, growing with, and loving even more deeply as time goes on.</p>
+    
+    <p style="animation-delay: 6s">I know I’ve had my shortcomings and mistakes, and I’m sorry for the times I hurt you or made you feel unappreciated. Please know that I see you, I appreciate you, and I love you more than words can express. Every little thing you do — your patience, your care, the way you understand me even when I’m at my worst — means the world to me.</p>
+    
+    <p style="animation-delay: 9s">This new chapter of ours, I promise to do better. I’ll show you more of the love you deserve, and I’ll make sure our relationship grows even stronger. I’ll be more consistent, more present, and more of the man you can always count on.</p>
+    
+    <p style="animation-delay: 12s">Thank you for being my everything — my girlfriend, my best friend, my confidante, my safe place. You’re my happy thought, my inspiration, and the reason I keep trying to become a better man. I’m so blessed to have you, love.</p>
+    
+    <p style="animation-delay: 15s">Here’s to our first anniversary — and to many more anniversaries ahead. I love you so much, my Den, my Denden, my lovie, my Jhiejhiemon. Forever and always. ❤️</p>
+  </div>
 </body>
 </html>
