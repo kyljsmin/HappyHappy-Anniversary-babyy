@@ -2,55 +2,65 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QR Surprise</title>
+  <title>Happy Anniversary My Love 💖</title>
   <style>
     body {
-      background-color: #ffe6eb;
+      background-color: #ffe6f0;
+      font-family: "Segoe UI", sans-serif;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      font-family: 'Arial', sans-serif;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
     }
-
-    .message {
+    .message-box {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 600px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      font-size: 18px;
+      line-height: 1.6;
+      color: #333;
+      white-space: pre-line;
+    }
+    .heart {
+      color: #e60073;
       font-size: 24px;
-      color: #b30047;
-      opacity: 0;
-      animation: fadeInText 3s forwards;
-    }
-
-    @keyframes fadeInText {
-      to { opacity: 1; }
-    }
-
-    .qr-container {
-      margin-top: 20px;
-      opacity: 0;
-      animation: fadeInQR 2s forwards;
-      animation-delay: 3s; /* shows after text */
-    }
-
-    @keyframes fadeInQR {
-      to { opacity: 1; }
-    }
-
-    img {
-      width: 200px;
-      height: 200px;
+      text-align: center;
+      margin-bottom: 15px;
     }
   </style>
 </head>
 <body>
-
-  <div class="message">💖 Scan this QR, Den 💖</div>
-
-  <div class="qr-container">
-    <!-- This QR redirects to your message.html file -->
-    <img src="https://chart.googleapis.com/chart?cht=qr&chs=200x200&chl=https://YOUR-WEBSITE/message.html" alt="QR Code">
+  <div class="message-box">
+    <div class="heart">❤️ Happy Anniversary, Den ❤️</div>
+    <div id="message"></div>
   </div>
 
+  <script>
+    const text = `Happy anniversary, my love! 💕 Can you believe that tomorrow marks one year of us officially being together? It still feels unreal sometimes. From the day we first met back in Grade 11 up to now, we’ve already been through so much. We’ve had our ups and downs, our laughs and our tears but despite everything, we’re still here, still choosing each other every single day.
+
+Looking back, I’m proud of how far we’ve come. We’ve weathered storms that could’ve easily broken us, but instead, they made us stronger. And love, if there’s one thing I’ve learned this past year, it’s that you’re the person I want to keep fighting for, growing with, and loving even more deeply as time goes on.
+
+I know I’ve had my shortcomings and mistakes, and I’m sorry for the times I hurt you or made you feel unappreciated. Please know that I see you, I appreciate you, and I love you more than words can express. Every little thing you do your patience, your care, the way you understand me even when I’m at my worst means the world to me.
+
+This new chapter of ours, I promise to do better. I’ll show you more of the love you deserve, and I’ll make sure our relationship grows even stronger. I’ll be more consistent, more present, and more of the man you can always count on.
+
+Thank you for being my everything my girlfriend, my best friend, my safe place. You’re my happy thought, my inspiration, and the reason I keep trying to become a better man. I’m so blessed to have you, love.
+
+Here’s to our first anniversary and to many more anniversaries ahead. I love you so much, my Den, my Denden, my lovie, my Jhiejhiemon. Forever and always. ❤️`;
+
+    let i = 0;
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("message").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 40); // speed of typing
+      }
+    }
+    typeWriter();
+  </script>
 </body>
 </html>
