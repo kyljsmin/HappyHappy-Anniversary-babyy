@@ -2,48 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Anniversary QR</title>
-  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Surprise</title>
   <style>
     body {
+      background-color: #ffe6eb;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background: #fce4ec;
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
     }
-    h1 {
-      color: #ad1457;
+
+    .message {
+      font-size: 24px;
+      color: #b30047;
+      opacity: 0;
+      animation: fadeInText 3s forwards;
     }
-    #qrcode {
+
+    @keyframes fadeInText {
+      to { opacity: 1; }
+    }
+
+    .qr-container {
       margin-top: 20px;
-      padding: 15px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      opacity: 0;
+      animation: fadeInQR 2s forwards;
+      animation-delay: 3s; /* shows after text */
+    }
+
+    @keyframes fadeInQR {
+      to { opacity: 1; }
+    }
+
+    img {
+      width: 200px;
+      height: 200px;
     }
   </style>
 </head>
 <body>
-  <h1>💖 Scan this QR, Love 💖</h1>
-  <div id="qrcode"></div>
 
-  <script>
-    // Full URL for your anniversary.html page
-    // Example: if you upload this to GitHub Pages or Netlify
-    // replace the below with your actual URL
-    const messagePage = window.location.origin + "/anniversary.html";
+  <div class="message">💖 Scan this QR, Den 💖</div>
 
-    QRCode.toCanvas(document.getElementById("qrcode"), messagePage, { 
-      width: 250, 
-      margin: 2,
-      color: {
-        dark: "#ad1457",
-        light: "#ffffff"
-      }
-    });
-  </script>
+  <div class="qr-container">
+    <!-- This QR will redirect to message.html -->
+    <img src="https://chart.googleapis.com/chart?cht=qr&chs=200x200&chl=message.html" alt="QR Code">
+  </div>
+
 </body>
 </html>
